@@ -1,14 +1,3 @@
-PATH
-  remote: .
-  specs:
-    wally (0.0.34)
-      gherkin
-      haml
-      komainu
-      rdiscount
-      rest-client
-      sinatra
-
 GEM
   remote: http://rubygems.org/
   specs:
@@ -100,8 +89,13 @@ DEPENDENCIES
   capybara
   cucumber
   fakefs
+  gherkin
+  haml
   headless
+  komainu
   launchy
   mongo_mapper
+  rdiscount
+  rest-client
   rspec
-  wally!
+  sinatra
