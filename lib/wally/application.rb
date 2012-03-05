@@ -24,7 +24,7 @@ else
 end
 
 def current_project
-  Wally::Project.first(:name => params[:project])
+  @current_project ||= Wally::Project.first(:name => params[:project])
 end
 
 def tag_count
@@ -82,7 +82,8 @@ get '/?' do
   if first_project
     redirect "/projects/#{first_project.name}"
   else
-    markdown File.read("README.md"), :layout => false
+    readme_path = File.expand_path(File.join(File.dirname(__FILE__), "../../README.md"))
+    markdown File.read(readme_path), :layout => false
   end
 end
 
